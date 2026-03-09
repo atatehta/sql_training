@@ -1,15 +1,15 @@
 {
   "sqltools.connections": [
     {
-      "name": "Shared Supabase (from .env)",
+      "name": "Shared Supabase (Pooler)",
       "driver": "CockroachDB",
-      "server": "${env:DB_HOST}",
-      "port": "${env:DB_PORT}",
-      "database": "${env:DB_NAME}",
-      "username": "${env:DB_USER}",
-      "password": "${env:DB_PASSWORD}",
-      "previewLimit": 50,
-      "askForPassword": false
+      "server": "aws-1-us-east-1.pooler.supabase.com",
+      "port": 6543,
+      "database": "postgres",
+      "username": "hpa_tech_train.eiiphhhdravstbmgxvjc",
+      "askForPassword": true,
+      "ssl": true,
+      "previewLimit": 50
     }
   ]
 }

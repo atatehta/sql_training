@@ -6,22 +6,19 @@ You can use either setup path below. Both are fully supported.
 
 ## What is included
 
-- A Codespaces setup that installs SQLTools + PostgreSQL driver
-- A prefilled SQLTools connection template in Codespaces
-- A `.env.example` file you can copy and fill in
+- SQLTools + PostgreSQL/Cockroach driver setup for Codespaces
+- A preconfigured SQLTools connection named `Shared Supabase (Pooler)`
 - A sample query in `queries/01_verify_connection.sql`
 
 ## Option A: GitHub Codespaces (no install required)
 
 1. Open this repository on GitHub.
 2. Click **Code** -> **Codespaces** -> **Create codespace on main**.
-3. In the Codespace, create your `.env` file:
-   - Copy `.env.example` to `.env`
-   - Fill in the credentials shared by your instructor
-4. Open SQLTools in the left sidebar.
-5. Use the connection named **Shared Supabase (from .env)**.
+3. Open SQLTools in the left sidebar.
+4. Select the connection **Shared Supabase (Pooler)**.
+5. Click connect and enter the shared class password when prompted.
 6. Open `queries/01_verify_connection.sql` and run it.
-7. If you get database/user/time results, you are connected.
+7. If you see database/user/time results, your connection is working.
 
 ## Option B: Local VS Code
 
@@ -30,30 +27,28 @@ You can use either setup path below. Both are fully supported.
 3. Install these extensions:
    - `SQLTools` (`mtxr.sqltools`)
    - `SQLTools PostgreSQL/Cockroach Driver` (`mtxr.sqltools-driver-pg`)
-4. Create your `.env` file:
-   - Copy `.env.example` to `.env`
-   - Fill in the credentials shared by your instructor
-5. In SQLTools, add a new PostgreSQL connection.
-6. Copy values from `.env` into the connection fields:
-   - Server = `DB_HOST`
-   - Port = `DB_PORT`
-   - Database = `DB_NAME`
-   - Username = `DB_USER`
-   - Password = `DB_PASSWORD`
+4. Open SQLTools.
+5. Use the connection **Shared Supabase (Pooler)** from workspace settings.
+6. Click connect and enter the shared class password when prompted.
 7. Open `queries/01_verify_connection.sql` and run it.
-8. If you get database/user/time results, you are connected.
+8. If you see database/user/time results, your connection is working.
 
-## Environment variables
+## Connection details (already prefilled)
 
-Your `.env` should include:
+- Driver: `CockroachDB`
+- Host: `aws-1-us-east-1.pooler.supabase.com`
+- Port: `6543`
+- Database: `postgres`
+- Username: `hpa_tech_train.eiiphhhdravstbmgxvjc`
+- SSL: `true`
+- Password: entered at connect time
 
-- `DB_HOST`
-- `DB_PORT`
-- `DB_NAME`
-- `DB_USER`
-- `DB_PASSWORD`
+## Why use the pooler?
+
+- It is more reliable across different student networks than direct port `5432`.
+- It is designed for many concurrent connections.
 
 ## Notes
 
-- `.env` is ignored by Git so credentials are not committed.
-- If SQLTools does not show the connection right away in Codespaces, reload the VS Code window.
+- Students only need the shared password.
+- In a new Codespace, students may need to enter the password again.
