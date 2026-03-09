@@ -14,9 +14,15 @@ You can use either setup path below. Both are fully supported.
 
 1. Open this repository on GitHub.
 2. Click **Code** -> **Codespaces** -> **Create codespace on main**.
-3. Open SQLTools in the left sidebar.
+3. Open SQLTools in the left sidebar. This may take a minute or so to appear as the environment is set up
+
+<img src="./assets/sql_connect_in_codespaces.png" alt="sql connection steps" width="300">
+
 4. Select the connection **Shared Supabase (Pooler)**.
-5. Click connect and enter the shared class password when prompted.
+5. When you click the connection a prompt should appear at th top for the password. Enter it and hit return
+
+<img src="./assets/enter_password_location.png" alt="password field" width="400">
+
 6. Open `queries/01_verify_connection.sql` and run it.
 7. If you see database/user/time results, your connection is working.
 
